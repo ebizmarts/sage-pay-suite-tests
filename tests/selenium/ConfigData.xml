@@ -1,0 +1,148 @@
+<?xml version='1.0'?>
+<payment>
+    <sagepaysuite>
+        <referrer_id><![CDATA[01bf51f9-0dcd-49dd-a07a-3b1f918c77d7]]></referrer_id>
+        <license_key><![CDATA[[Obtain from Ebizmarts]]]></license_key>
+        <connection_timeout>30</connection_timeout>
+        <max_token_card>6</max_token_card>
+        <logs>0</logs>
+        <profile_request>0</profile_request>
+        <vendor>testebizmarts</vendor>
+        <token_integration><![CDATA[direct]]></token_integration>
+        <cms_index_logo>1</cms_index_logo>
+        <sagepay_notifications>1</sagepay_notifications>
+        <orphans_notification>1</orphans_notification>
+        <order_error_save>0</order_error_save>
+        <order_error_save_message><![CDATA[Order saving process halted.]]></order_error_save_message>
+        <timeout_message><![CDATA[A connection error prevented your order from being saved, please retry or email {admin_email} for assistance. Thanks, {store_name}]]></timeout_message>
+        <auto_fulfill_low_risk_trn>0</auto_fulfill_low_risk_trn>
+        <auto_fulfill_low_risk_trn_value>30</auto_fulfill_low_risk_trn_value>
+        <send_basket>1</send_basket>
+        <basket_format>sage</basket_format>
+        <layout_rewrites_active>0</layout_rewrites_active>
+        <layout_rewrites_updates></layout_rewrites_updates>
+        <layout_rewrites_updates_applyon><![CDATA[checkout_onepage_index,onestepcheckout_index_index,onepagecheckout_index_index]]></layout_rewrites_updates_applyon>
+        <curl_verifypeer>0</curl_verifypeer>
+        <deferred_capture>0</deferred_capture>
+        <sync_mode>sync</sync_mode>
+        <sagefifty_basket>0</sagefifty_basket>
+        <ignore_address_validation>1</ignore_address_validation>
+        <send_payment_failed_emails>0</send_payment_failed_emails>
+        <verify_cart_consistency>0</verify_cart_consistency>
+        <check_amounts>0</check_amounts>
+    </sagepaysuite>
+    <sagepaydirectpro>
+        <active>0</active>
+        <cctypesSagePayDirectPro>VISA,MC,DELTA,SOLO,SWITCH,UKE</cctypesSagePayDirectPro>
+        <cctypes>VISA,MC,DELTA,SWITCH,MAESTRO,UKE</cctypes>
+        <debug>0</debug>
+        <email_customer>0</email_customer>
+        <login backend_model="adminhtml/system_config_backend_encrypted"/>
+        <model>sagepaysuite/sagePayDirectPro</model>
+        <order_status>pending</order_status>
+        <fail_order_status>pending</fail_order_status>
+        <payment_action>payment</payment_action>
+        <secure3d>2</secure3d>
+        <mode>test</mode>
+        <title>Credit Card (Sage Pay)</title>
+        <trans_key backend_model="adminhtml/system_config_backend_encrypted"/>
+        <allowspecific>0</allowspecific>
+        <vendor>testebizmarts</vendor>
+        <email_timeout_identity>general</email_timeout_identity>
+        <email_timeout_template>sagepay_timeout_template</email_timeout_template>
+        <connection_timeout>10</connection_timeout>
+        <timeout_orders>0</timeout_orders>
+        <threed_iframe_height>500</threed_iframe_height>
+        <threed_iframe_width>600</threed_iframe_width>
+        <threed_layout>modal</threed_layout>
+        <avscv2>0</avscv2>
+    </sagepaydirectpro>
+    <sagepaydirectpro_moto>
+        <active>0</active>
+        <accounttype>M</accounttype>
+        <cctypesSagePayDirectPro>VISA,MC,DELTA,SWITCH,MAESTRO,AMEX,UKE,DINERS,JCB,LASER</cctypesSagePayDirectPro>
+        <cctypes>VISA,MC,DELTA,SWITCH,MAESTRO,AMEX,UKE,DINERS,JCB,LASER</cctypes>
+        <debug>0</debug>
+        <currency>GBP</currency>
+        <email_customer>0</email_customer>
+        <login backend_model="adminhtml/system_config_backend_encrypted"/>
+        <model>sagepaysuite/sagePayDirectProMoto</model>
+        <order_status>pending</order_status>
+        <fail_order_status>pending</fail_order_status>
+        <payment_action>payment</payment_action>
+        <mode>test</mode>
+        <title>Credit Card (Sage Pay) MOTO</title>
+        <trans_key backend_model="adminhtml/system_config_backend_encrypted"/>
+        <allowspecific>0</allowspecific>
+        <vendor>testebizmarts</vendor>
+        <email_timeout_identity>general</email_timeout_identity>
+        <email_timeout_template>sagepay_timeout_template</email_timeout_template>
+        <connection_timeout>10</connection_timeout>
+        <timeout_orders>0</timeout_orders>
+        <threed_iframe_height>500</threed_iframe_height>
+        <threed_iframe_width>600</threed_iframe_width>
+        <timeout_message>A connection error prevented your order from being saved, please retry or email [admin_email] for assistance. Thanks , [store_name]</timeout_message>
+        <avscv2>0</avscv2>
+        <flag_on_cache>0</flag_on_cache>
+    </sagepaydirectpro_moto>
+    <sagepayserver>
+        <avscv2>0</avscv2>
+        <active>0</active>
+        <debug>0</debug>
+        <model>sagepaysuite/sagePayServer</model>
+        <order_status>pending</order_status>
+        <title>Sage Pay Server</title>
+        <allowspecific>0</allowspecific>
+        <vendor>testebizmarts</vendor>
+        <mode>test</mode>
+        <payment_iframe_position>modal</payment_iframe_position>
+        <iframe_label>Sage Pay Server</iframe_label>
+        <payment_action>payment</payment_action>
+        <purchase_description>Purchase of products ECOMMERCE</purchase_description>
+        <selected_description><![CDATA[Enter your credit card details after Order Review<br />{{secured_logo}}]]></selected_description>
+        <auto_show_iframe>0</auto_show_iframe>
+        <iframe_height>505</iframe_height>
+        <iframe_width>800</iframe_width>
+        <token_iframe_height>550</token_iframe_height>
+        <token_iframe_width>550</token_iframe_width>
+        <template_profile>LOW</template_profile>
+    </sagepayserver>
+    <sagepayserver_moto>
+        <active>0</active>
+        <debug>0</debug>
+        <avscv2>0</avscv2>
+        <model>sagepaysuite/sagePayServerMoto</model>
+        <order_status>pending</order_status>
+        <title>Sage Pay Server MOTO</title>
+        <payment_action>payment</payment_action>
+        <allowspecific>0</allowspecific>
+        <vendor>testebizmarts</vendor>
+        <mode>test</mode>
+        <purchase_description>Purchase of products MOTO</purchase_description>
+        <template_profile>LOW</template_profile>
+    </sagepayserver_moto>
+    <sagepayform>
+        <active>0</active>
+        <send_email>1</send_email>
+        <payment_action>payment</payment_action>
+        <mode>test</mode>
+        <title>Sage Pay (FORM)</title>
+        <order_status>pending</order_status>
+        <selected_description><![CDATA[You will be redirected to the Sage Pay website when you place an order.<br />{{secured_logo}}]]></selected_description>
+        <model>sagepaysuite/sagePayForm</model>
+        <allowspecific>0</allowspecific>
+    </sagepayform>
+    <sagepaypaypal>
+        <active>0</active>
+        <payment_action>payment</payment_action>
+        <title>PayPal via SagePay</title>
+        <model>sagepaysuite/sagePayPayPal</model>
+        <frontend_behaviour>checkout</frontend_behaviour>
+    </sagepaypaypal>
+    <sagepayrepeat>
+        <active>0</active>
+        <title>Repeat Payments</title>
+        <model>sagepaysuite/sagePayRepeat</model>
+        <order_status>processing</order_status>
+    </sagepayrepeat>
+</payment>
