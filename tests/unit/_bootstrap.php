@@ -1,3 +1,2 @@
 <?php
-// Here you can initialize variables that will for your tests
-\Codeception\Configuration::$lock = true;
+// Here you can initialize variables that will be available to your tests
