@@ -1,0 +1,12 @@
+class_name: SageTester
+modules:
+    enabled:
+        - WebDriver
+    config:
+      WebDriver:
+         url: 'http://office.ebizmarts.com/index.php/'
+         browser: firefox
+         window_size: 1440x900
+         wait: 10
+         capabilities:
+         unexpectedAlertBehaviour: 'accept'
