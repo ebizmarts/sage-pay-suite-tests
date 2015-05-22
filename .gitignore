@@ -13,3 +13,4 @@ tests/data/included/shire/tests/_log/*
 tests/data/claypit/c3tmp/*'
 tests/data/claypit/tests/_log/*
 tests/data/claypit/c3tmp
+tests/.DS_Store
