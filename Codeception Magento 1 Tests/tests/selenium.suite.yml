@@ -1,0 +1,11 @@
+class_name: SeleniumGuyTester
+modules:
+    enabled:
+        - WebDriver
+    config:
+      WebDriver:
+         url: 'http://sagepaysuitece.ebizmarts.com/'
+         browser: safari
+         window_size: 1440x900
+         wait: 10
+         unexpectedAlertBehaviour: 'accept'
