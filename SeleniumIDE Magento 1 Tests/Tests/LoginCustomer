@@ -3,38 +3,45 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Login Magento Admin</title>
+<link rel="selenium.base" href="http://suite-test1.ebizmarts.com/admin" />
+<title>LoginCustomer</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">Login Magento Admin</td></tr>
+<tr><td rowspan="1" colspan="3">LoginCustomer</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>${magento_admin_url}</td>
+	<td>${magento_frontend_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log In</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=username</td>
-	<td>${magento_admin_user}</td>
+	<td>id=email</td>
+	<td>${magento_customer_user}</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=login</td>
-	<td>${magento_admin_pw}</td>
+	<td>id=pass</td>
+	<td>${magento_customer_pw}</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=input.form-button</td>
+	<td>id=send2</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>css=h3.head-dashboard</td>
-	<td>Dashboard</td>
+	<td>link=Log Out</td>
+	<td>Log Out</td>
 </tr>
+
 </tbody></table>
 </body>
 </html>
