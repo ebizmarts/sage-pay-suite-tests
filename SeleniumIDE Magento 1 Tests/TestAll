@@ -9,13 +9,16 @@
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="Tests/Config">Config</a></td></tr>
-<tr><td><a href="Tests/Logout">Logout</a></td></tr>
 <tr><td><a href="Tests/LoginMagentoAdmin">LoginMagentoAdmin</a></td></tr>
 <tr><td><a href="Tests/EnableAllSagepayIntegrations">EnableAllSagepayIntegrations</a></td></tr>
+<tr><td><a href="Tests/SetConfigForAUTHCAPTURE">SetConfigForAUTHCAPTURE</a></td></tr>
 <tr><td><a href="Tests/LoginCustomer">LoginCustomer</a></td></tr>
 <tr><td><a href="Tests/AddTestItemToCart">AddTestItemToCart</a></td></tr>
 <tr><td><a href="Tests/CheckAllIntegrationsShowingOnCheckout">CheckAllIntegrationsShowingOnCheckout</a></td></tr>
-<tr><td><a href="Tests/FormOrderBasic">FormOrderBasic</a></td></tr>
+<tr><td><a href="Tests/FormOrderBasic">FORM_OrderBasic</a></td></tr>
+<tr><td><a href="Tests/RefundLatestOrder">RefundLatestOrder</a></td></tr>
+<tr><td><a href="Tests/SERVER_OrderBasic">SERVER_OrderBelowPO</a></td></tr>
+<tr><td><a href="Tests/DIRECT_OrderBasic">DIRECT_OrderBasic</a></td></tr>
 </tbody></table>
 </body>
 </html>

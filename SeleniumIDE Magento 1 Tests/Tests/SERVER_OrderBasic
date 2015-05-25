@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://suite-test1.ebizmarts.com/admin" />
-<title>FormOrderBasic</title>
+<title>SERVER_OrderBelowPO</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">FormOrderBasic</td></tr>
+<tr><td rowspan="1" colspan="3">SERVER_OrderBelowPO</td></tr>
 </thead><tbody>
 <!--********** Add Item to checkout **********-->
 <tr>
@@ -65,7 +65,17 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=p_method_sagepayform</td>
+	<td>id=p_method_sagepayserver</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=remembertoken-sagepayserver</td>
 	<td></td>
 </tr>
 <tr>
@@ -103,21 +113,11 @@
 	<td>css=button.button.btn-checkout</td>
 	<td></td>
 </tr>
-<!--********** SAGEPAY FORM **********-->
+<!--********** SAGEPAY SERVER iframe **********-->
 <tr>
 	<td>waitForText</td>
 	<td>css=h1.page__title</td>
-	<td>exact:¿Cómo quieres pagar?</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>xpath=(//button[@name='cardselected'])[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>id=form-card_details.field-pan</td>
-	<td></td>
+	<td>Your card details</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -140,19 +140,14 @@
 	<td>123</td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>name=action</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=h1.page__title</td>
-	<td>Verifica tu pedido</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>name=action</td>
-	<td></td>
+	<td>waitForElementPresent</td>
+	<td>id=sagepaysuite-server-incheckout-iframe</td>
+	<td>Purchase Authentication</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
