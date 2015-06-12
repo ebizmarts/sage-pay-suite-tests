@@ -38,7 +38,6 @@
 	<td>test was added to your shopping cart.</td>
 </tr>
 <!--********** Checkout **********-->
-<!---->
 <tr>
 	<td>open</td>
 	<td>${magento_frontend_url}/checkout/onepage</td>

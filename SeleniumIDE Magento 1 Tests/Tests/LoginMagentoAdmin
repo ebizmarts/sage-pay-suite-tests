@@ -12,7 +12,12 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>${magento_admin_url}</td>
+	<td>/${magento_admin_relative_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>Log into Magento Admin Page</td>
 	<td></td>
 </tr>
 <tr>
@@ -31,9 +36,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertText</td>
-	<td>css=h3.head-dashboard</td>
-	<td>Dashboard</td>
+	<td>assertTitle</td>
+	<td>Dashboard / Magento Admin</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>

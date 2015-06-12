@@ -13,12 +13,12 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>${magento_frontend_url}</td>
+	<td>/customer/account/login/</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Log In</td>
+	<td>verifyTitle</td>
+	<td>Customer Login</td>
 	<td></td>
 </tr>
 <tr>
@@ -41,7 +41,6 @@
 	<td>link=Log Out</td>
 	<td>Log Out</td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

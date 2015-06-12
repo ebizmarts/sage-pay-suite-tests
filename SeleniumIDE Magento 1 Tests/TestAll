@@ -9,10 +9,12 @@
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="Tests/Config">Config</a></td></tr>
+<tr><td><a href="Tests/LoginCustomer">LoginCustomer</a></td></tr>
 <tr><td><a href="Tests/LoginMagentoAdmin">LoginMagentoAdmin</a></td></tr>
+<tr><td><a href="Tests/AdminViews">AdminView</a></td></tr>
+<tr><td><a href="Tests/Deferred">Deferred</a></td></tr>
 <tr><td><a href="Tests/EnableAllSagepayIntegrations">EnableAllSagepayIntegrations</a></td></tr>
 <tr><td><a href="Tests/SetConfigForAUTHCAPTURE">SetConfigForAUTHCAPTURE</a></td></tr>
-<tr><td><a href="Tests/LoginCustomer">LoginCustomer</a></td></tr>
 <tr><td><a href="Tests/AddTestItemToCart">AddTestItemToCart</a></td></tr>
 <tr><td><a href="Tests/CheckAllIntegrationsShowingOnCheckout">CheckAllIntegrationsShowingOnCheckout</a></td></tr>
 <tr><td><a href="Tests/FormOrderBasic">FORM_OrderBasic</a></td></tr>
