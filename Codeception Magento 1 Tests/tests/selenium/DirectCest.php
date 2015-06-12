@@ -1,50 +1,109 @@
 <?php
 use \SeleniumGuyTester;
 
-class DirectCest
-{
-    public function _before(SeleniumGuyTester $I)
-    {
-    }
+require_once('BaseCest.php');
+require_once('ConfigHelper.php');
 
-    public function _after(SeleniumGuyTester $I)
-    {
-    }
+class DirectCest{
 
-    protected function _login($I) {
+    public function _before(SageTester $I){
 
-        $I->amOnPage('/customer/account/login');
-        $I->submitForm('#login-form',
-            array(
-                'login[username]' => 'pablo@ebizmarts.com',
-                'login[password]' => 'q1w2e3r4',
-            )
-        );
+        $config = new SagePayConfig();
+        $config->resetConfig();
+        $config->useDirect();
+        $config->useToken(); //the Sage Tester is smart enough to don't use tokens when it is explicit.
 
-        $I->amOnPage('/customer/account/index');
-        $I->see('Hello, Pablo Benitez!');
-    }
+        $I->login();
 
-    // tests
-    public function try_to_place_an_order_logged_in(SeleniumGuyTester $I)
-    {
-        $I->wantTo('Check place an order with Direct integration, no TOKEN as a logged in customer.');
+        $I->addProductToCart(); //all the tests begin logged in and with a product in the cart.
 
-        $this->_login($I);
+        $I->proceedToCheckout();
 
-        $I->amOnPage('index.php/prueba.html');
-        $I->click('Add to Cart');
-        $I->amOnPage('checkout/cart/');
-        $I->click('Proceed to Checkout');
-        $I->amOnPage('checkout/onepage/');
-        $I->click('Continue');
-        $I->click('//*[@id="s_method_freeshipping_freeshipping"]');
-        $I->click('div#shipping-method-buttons-container button');
-        $I->click('//*[@id="p_method_sagepaydirectpro"]');
-        //$I->fillField(['id' => 'sagepaydirectpro_cc_owner'], "Hello World!");
-        $I->selectOption('#sagepaydirectpro_cc_type', "MasterCard");
-        $I->click('div#payment-buttons-container.buttons-set button.button');
+        $I->fillOnepageBillingInformation();
+        $I->fillOnepageShippingMethod();
+
 
     }
 
+    public function _after(SageTester $I){
+
+        $I->fillOnepageOrderReview();
+
+        $I->handle_3D();
+
+        $I->checkPaymentSuccess();
+        $I->checkInvoice();
+    }
+
+    /*
+     * before place_3D_order
+     * before place_3D_order_with_token
+     */
+    protected function use3D(){
+        $config = new SagePayConfig();
+        $config->use3D();
+    }
+
+    public function place_order(SageTester $I){
+
+        $I->wantTo('Place a simple order without tokens');
+
+        $I->fillOnepagePaymentInformation('direct',FALSE);
+
+    }
+
+    public function place_order_with_token(SageTester $I){
+
+        $I->wantTo('Place a simple order with first token');
+
+        $I->fillOnepagePaymentInformation('direct',TRUE); //default with token
+
+    }
+
+    public function place_3D_order(SageTester $I){
+
+        $I->wantTo('Place a 3D order without tokens');
+
+        $I->fillOnepagePaymentInformation('direct',FALSE); //default with token
+
+    }
+
+    public function place_3D_order_with_token(SageTester $I){
+
+        $I->wantTo('Place a 3D order with first token');
+
+        $I->fillOnepagePaymentInformation('direct',TRUE); //default with token
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    protected function _place_order_with_token(SageTester $I){ // this is just to have an overview of what is happening on each test
+
+        $I->wantTo('Place a simple order with first token');
+
+        $I->login();
+
+        $I->addProductToCart();
+        $I->proceedToCheckout();
+
+        $I->fillOnepageBillingInformation();
+        $I->fillOnepageShippingMethod();
+        $I->fillOnepagePaymentInformation('direct',TRUE); //default with token
+        $I->fillOnepageOrderReview();
+
+        $I->handle_3D();
+
+        $I->checkPaymentSuccess();
+        $I->checkInvoice();
+
+    }
 }

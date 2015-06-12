@@ -3,16 +3,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-  <title>Test All</title>
+  <title>Test Suite</title>
 </head>
 <body>
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
-<tr><td><b>Test All</b></td></tr>
-
+<tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="Tests/Config">Config</a></td></tr>
+<tr><td><a href="Tests/LoginCustomer">LoginCustomer</a></td></tr>
 <tr><td><a href="Tests/LoginMagentoAdmin">LoginMagentoAdmin</a></td></tr>
-
-
+<tr><td><a href="Tests/AdminViews">AdminView</a></td></tr>
+<tr><td><a href="Tests/Deferred">Deferred</a></td></tr>
+<tr><td><a href="Tests/EnableAllSagepayIntegrations">EnableAllSagepayIntegrations</a></td></tr>
+<tr><td><a href="Tests/SetConfigForAUTHCAPTURE">SetConfigForAUTHCAPTURE</a></td></tr>
+<tr><td><a href="Tests/AddTestItemToCart">AddTestItemToCart</a></td></tr>
+<tr><td><a href="Tests/CheckAllIntegrationsShowingOnCheckout">CheckAllIntegrationsShowingOnCheckout</a></td></tr>
+<tr><td><a href="Tests/FormOrderBasic">FORM_OrderBasic</a></td></tr>
+<tr><td><a href="Tests/RefundLatestOrder">RefundLatestOrder</a></td></tr>
+<tr><td><a href="Tests/SERVER_OrderBasic">SERVER_OrderBelowPO</a></td></tr>
+<tr><td><a href="Tests/DIRECT_OrderBasic">DIRECT_OrderBasic</a></td></tr>
 </tbody></table>
 </body>
 </html>

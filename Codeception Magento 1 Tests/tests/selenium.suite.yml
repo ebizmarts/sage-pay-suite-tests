@@ -1,4 +1,4 @@
-class_name: SeleniumGuyTester
+class_name: SageTester
 modules:
     enabled:
         - WebDriver

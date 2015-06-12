@@ -1,2 +1,3 @@
 .idea
-Codeception Magento 1 Tests/tests/selenium.suite.yml.orig
+*.orig
+tests/data

@@ -10,15 +10,99 @@
 <thead>
 <tr><td rowspan="1" colspan="3">SetMagentoUrlForTests</td></tr>
 </thead><tbody>
+<!--********** Admin **********-->
 <tr>
 	<td>store</td>
-	<td>http://suite-test3.ebizmarts.com/admin</td>
-	<td>magento_url</td>
+	<td>http://suite-test1.ebizmarts.com/admin</td>
+	<td>magento_admin_url</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>1</td>
-	<td>test</td>
+	<td>admin</td>
+	<td>magento_admin_relative_url</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>admin</td>
+	<td>magento_admin_user</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>q1w2e3r4</td>
+	<td>magento_admin_pw</td>
+</tr>
+<!--********** Frontend **********-->
+<tr>
+	<td>store</td>
+	<td>http://suite-test1.ebizmarts.com</td>
+	<td>magento_frontend_url</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>federico@ebizmarts.com</td>
+	<td>magento_customer_user</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>q1w2e3r4</td>
+	<td>magento_customer_pw</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>http://suite-test1.ebizmarts.com/test.html</td>
+	<td>magento_product_url</td>
+</tr>
+<!--********** Guest data **********-->
+<tr>
+	<td>store</td>
+	<td>name</td>
+	<td>guest_name</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>last name</td>
+	<td>guest_last_name</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>fake@mail.com</td>
+	<td>guest_email</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>901 fake street</td>
+	<td>guest_address</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>Los Angeles</td>
+	<td>guest_city</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>label=California</td>
+	<td>guest_region</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>90210</td>
+	<td>guest_post_code</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>label=United States</td>
+	<td>guest_country</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>555 1234</td>
+	<td>guest_telephone</td>
+</tr>
+<!--************ 3D *************-->
+<tr>
+	<td>store</td>
+	<td>123</td>
+	<td>3d_password</td>
 </tr>
 </tbody></table>
 </body>

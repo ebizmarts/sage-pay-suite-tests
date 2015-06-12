@@ -3,43 +3,40 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Login Magento Admin</title>
+<link rel="selenium.base" href="http://suite-test1.ebizmarts.com/admin" />
+<title>AddTestItemToCart</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">Login Magento Admin</td></tr>
+<tr><td rowspan="1" colspan="3">AddTestItemToCart</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/${magento_admin_relative_url}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyTitle</td>
-	<td>Log into Magento Admin Page</td>
+	<td>${magento_frontend_url}</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=username</td>
-	<td>${magento_admin_user}</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=login</td>
-	<td>${magento_admin_pw}</td>
+	<td>id=search</td>
+	<td>test</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=input.form-button</td>
+	<td>css=button.button.search-button</td>
 	<td></td>
 </tr>
 <tr>
-	<td>assertTitle</td>
-	<td>Dashboard / Magento Admin</td>
+	<td>clickAndWait</td>
+	<td>css=button.button.btn-cart</td>
 	<td></td>
 </tr>
+<tr>
+	<td>assertText</td>
+	<td>css=li.success-msg &gt; ul &gt; li</td>
+	<td>test was added to your shopping cart.</td>
+</tr>
+
 </tbody></table>
 </body>
 </html>

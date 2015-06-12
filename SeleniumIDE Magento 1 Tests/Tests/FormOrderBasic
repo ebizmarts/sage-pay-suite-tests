@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://suite-test1.ebizmarts.com/admin" />
+<title>FormOrderBasic</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">FormOrderBasic</td></tr>
+</thead><tbody>
+<!--********** Add Item to checkout **********-->
+<tr>
+	<td>open</td>
+	<td>${magento_frontend_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=search</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.button.search-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.button.btn-cart</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=li.success-msg &gt; ul &gt; li</td>
+	<td>test was added to your shopping cart.</td>
+</tr>
+<!--********** Checkout **********-->
+<tr>
+	<td>open</td>
+	<td>${magento_frontend_url}/checkout/onepage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#billing-buttons-container &gt; button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#shipping-progress-opcheckout &gt; dd.complete &gt; address</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#shipping-method-buttons-container &gt; button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#shipping_method-progress-opcheckout &gt; dd.complete</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=p_method_sagepayform</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#payment-buttons-container &gt; button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=dd.complete &gt; p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//table[@id='checkout-review-table']/tfoot/tr[2]/td[2]/span</td>
+	<td>last_order_price_subtotal</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//table[@id='checkout-review-table']/tfoot/tr[4]/td[2]/span</td>
+	<td>last_order_price_tax</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//table[@id='checkout-review-table']/tfoot/tr[3]/td[2]/span</td>
+	<td>last_order_price_shipping</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=strong &gt; span.price</td>
+	<td>last_order_price_total</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.button.btn-checkout</td>
+	<td></td>
+</tr>
+<!--********** SAGEPAY FORM **********-->
+<tr>
+	<td>waitForText</td>
+	<td>css=h1.page__title</td>
+	<td>exact:¿Cómo quieres pagar?</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//button[@name='cardselected'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=form-card_details.field-pan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form-card_details.field-pan</td>
+	<td>4929000000006</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form-card_details.field-expiry_mm</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form-card_details.field-expiry_yy</td>
+	<td>24</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form-card_details.field-cvc</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=action</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h1.page__title</td>
+	<td>Verifica tu pedido</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=action</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<!--********** Magento SUCCESS **********-->
+<tr>
+	<td>waitForText</td>
+	<td>css=div.buttons-set &gt; button.button</td>
+	<td>Continue Shopping</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=h1</td>
+	<td>Your order has been received.</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//html/body/div/div/div[2]/div/div/p[1]/a</td>
+	<td>last_order_id</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${last_order_id}</td>
+	<td></td>
+</tr>
+<!--********** Verify on order page **********-->
+<tr>
+	<td>assertText</td>
+	<td>css=span.price</td>
+	<td>${last_order_price_subtotal}</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tr.shipping &gt; td.last.a-right &gt; span.price</td>
+	<td>${last_order_price_shipping}</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//table[@id='my-orders-table']/tfoot/tr[3]/td[2]/span</td>
+	<td>${last_order_price_tax}</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=strong &gt; span.price</td>
+	<td>${last_order_price_total}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Invoices</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Print Invoice</td>
+	<td>Print Invoice</td>
+</tr>
+</tbody></table>
+</body>
+</html>
