@@ -12,7 +12,7 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/${magento_admin_relative_url}</td>
+	<td>${magento_admin_url}</td>
 	<td></td>
 </tr>
 <tr>
@@ -36,9 +36,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertTitle</td>
-	<td>Dashboard / Magento Admin</td>
-	<td></td>
+	<td>assertText</td>
+	<td>css=a &gt; span</td>
+	<td>Dashboard</td>
 </tr>
 </tbody></table>
 </body>

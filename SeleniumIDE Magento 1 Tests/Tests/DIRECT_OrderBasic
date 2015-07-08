@@ -76,6 +76,11 @@
 <tr>
 	<td>select</td>
 	<td>id=sagepaydirectpro_cc_type</td>
+	<td>label=MasterCard</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sagepaydirectpro_cc_type</td>
 	<td>label=Visa</td>
 </tr>
 <tr>
@@ -121,7 +126,7 @@
 <!--********** 3D iframe **********-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//table[@id='AutoNumber1']/tbody/tr[2]/td/font[2]</td>
+	<td>//*[@id=&quot;authentication-table&quot;]</td>
 	<td></td>
 </tr>
 <tr>

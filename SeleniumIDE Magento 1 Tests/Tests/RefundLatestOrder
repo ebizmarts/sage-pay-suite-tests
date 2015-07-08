@@ -58,7 +58,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//html/body/div[1]/div[5]/div/div[2]/p/button[3]</td>
+	<td>//*[@id=&quot;anchor-content&quot;]/div/div[2]/p/button[3]</td>
 	<td></td>
 </tr>
 <tr>
@@ -76,7 +76,6 @@
 	<td>css=tr.2 &gt; td.emph &gt; strong &gt; span.price</td>
 	<td>${last_order_price_total}</td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

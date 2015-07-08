@@ -11,6 +11,37 @@
 <thead>
 <tr><td rowspan="1" colspan="3">SERVER_OrderBelowPO</td></tr>
 </thead><tbody>
+<!--********** Set needed config **********-->
+<tr>
+	<td>open</td>
+	<td>${magento_admin_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[8]/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sagepaysuite_sagepayserver_template_profile</td>
+	<td>label=Low (recommended)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sagepaysuite_sagepayserver_payment_iframe_position</td>
+	<td>label=Below the &quot;Place Order&quot; button</td>
+</tr>
+<tr>
+	<td>runScriptAndWait</td>
+	<td>configForm.submit()</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=li.success-msg &gt; ul &gt; li</td>
+	<td>The configuration has been saved.</td>
+</tr>
 <!--********** Add Item to checkout **********-->
 <tr>
 	<td>open</td>
