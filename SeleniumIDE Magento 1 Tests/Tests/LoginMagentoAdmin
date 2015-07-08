@@ -16,6 +16,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>verifyTitle</td>
+	<td>Log into Magento Admin Page</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>id=username</td>
 	<td>${magento_admin_user}</td>
@@ -32,7 +37,7 @@
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>css=h3.head-dashboard</td>
+	<td>css=a &gt; span</td>
 	<td>Dashboard</td>
 </tr>
 </tbody></table>

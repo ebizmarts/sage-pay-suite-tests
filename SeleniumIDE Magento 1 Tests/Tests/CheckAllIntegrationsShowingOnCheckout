@@ -11,6 +11,87 @@
 <thead>
 <tr><td rowspan="1" colspan="3">CheckAllIntegrationsShowingOnCheckout</td></tr>
 </thead><tbody>
+<!--********** Enable all integrations **********-->
+<tr>
+	<td>open</td>
+	<td>${magento_admin_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[8]/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sagepaysuite_sagepayform-head</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sagepaysuite_sagepayform_active</td>
+	<td>label=Yes</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sagepaysuite_sagepaypaypal-head</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sagepaysuite_sagepaypaypal_active</td>
+	<td>label=Yes</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sagepaysuite_sagepaydirectpro-head</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sagepaysuite_sagepaydirectpro_active</td>
+	<td>label=Yes</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sagepaysuite_sagepaydirectpro_moto-head</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sagepaysuite_sagepaydirectpro_moto_active</td>
+	<td>label=Yes</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sagepaysuite_sagepayrepeat-head</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sagepaysuite_sagepayrepeat_active</td>
+	<td>label=Yes</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sagepaysuite_sagepayserver_moto-head</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sagepaysuite_sagepayserver_moto_active</td>
+	<td>label=Yes</td>
+</tr>
+<tr>
+	<td>runScriptAndWait</td>
+	<td>configForm.submit()</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=li.success-msg &gt; ul &gt; li</td>
+	<td>The configuration has been saved.</td>
+</tr>
 <!--********** Add Item to checkout **********-->
 <tr>
 	<td>open</td>
@@ -38,7 +119,6 @@
 	<td>test was added to your shopping cart.</td>
 </tr>
 <!--********** Checkout **********-->
-<!---->
 <tr>
 	<td>open</td>
 	<td>${magento_frontend_url}/checkout/onepage</td>

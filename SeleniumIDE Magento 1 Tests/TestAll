@@ -9,16 +9,23 @@
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="Tests/Config">Config</a></td></tr>
-<tr><td><a href="Tests/LoginMagentoAdmin">LoginMagentoAdmin</a></td></tr>
-<tr><td><a href="Tests/EnableAllSagepayIntegrations">EnableAllSagepayIntegrations</a></td></tr>
-<tr><td><a href="Tests/SetConfigForAUTHCAPTURE">SetConfigForAUTHCAPTURE</a></td></tr>
 <tr><td><a href="Tests/LoginCustomer">LoginCustomer</a></td></tr>
-<tr><td><a href="Tests/AddTestItemToCart">AddTestItemToCart</a></td></tr>
+<tr><td><a href="Tests/LoginMagentoAdmin">LoginMagentoAdmin</a></td></tr>
+<tr><td><a href="Tests/AdminViews">CheckAllAdminViews</a></td></tr>
 <tr><td><a href="Tests/CheckAllIntegrationsShowingOnCheckout">CheckAllIntegrationsShowingOnCheckout</a></td></tr>
 <tr><td><a href="Tests/FormOrderBasic">FORM_OrderBasic</a></td></tr>
 <tr><td><a href="Tests/RefundLatestOrder">RefundLatestOrder</a></td></tr>
 <tr><td><a href="Tests/SERVER_OrderBasic">SERVER_OrderBelowPO</a></td></tr>
+<tr><td><a href="Tests/SERVER_OrderAndSaveToken">SERVER_OrderAndSaveToken</a></td></tr>
 <tr><td><a href="Tests/DIRECT_OrderBasic">DIRECT_OrderBasic</a></td></tr>
+<tr><td><a href="Tests/DIRECT_OrderSaveToken">DIRECT_OrderSaveToken</a></td></tr>
+<tr><td><a href="Tests/PI_OrderBasic">PI_OrderBasic</a></td></tr>
+<tr><td><a href="Tests/PAYPAL_OrderBasic">PAYPAL_OrderBasic</a></td></tr>
+<tr><td><a href="Tests/TokenAddFromCustomerAccountAsServer">TokenAddFromCustomerAccountAsServer</a></td></tr>
+<tr><td><a href="Tests/TokenAddFromCustomerAccountAsDirect">TokenAddFromCustomerAccountAsDirect</a></td></tr>
+<tr><td><a href="Tests/Deferred">Deferred-beta</a></td></tr>
+<tr><td><a href="Tests/SERVERMOTO_OrderBasic">SERVERMOTO_OrderBasic</a></td></tr>
+<tr><td><a href="Tests/DIRECTMOTO_OrderBasic">DIRECTMOTO_OrderBasic</a></td></tr>
 </tbody></table>
 </body>
 </html>
