@@ -4,14 +4,14 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://suite-test1.ebizmarts.com/admin" />
-<title>DIRECT_OrderBasic</title>
+<title>DIRECT_OrderSaveToken</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">DIRECT_OrderBasic</td></tr>
+<tr><td rowspan="1" colspan="3">DIRECT_OrderSaveToken</td></tr>
 </thead><tbody>
-<!--********** Disable OSC **********-->
+<!--********** Set needed config **********-->
 <tr>
 	<td>open</td>
 	<td>${magento_admin_url}</td>
@@ -24,28 +24,8 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=sagepaysuite_sagepaydirectpro_payment_action</td>
-	<td>label=Authorise and Capture</td>
-</tr>
-<tr>
-	<td>runScriptAndWait</td>
-	<td>configForm.submit()</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>css=li.success-msg &gt; ul &gt; li</td>
-	<td>The configuration has been saved.</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>//ul[@id='system_config_tabs']/li[6]/dl/dd[6]/a/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=onestepcheckout_general_rewrite_checkout_links</td>
-	<td>label=No</td>
+	<td>id=sagepaysuite_sagepaysuite_token_integration</td>
+	<td>label=Direct</td>
 </tr>
 <tr>
 	<td>runScriptAndWait</td>
@@ -122,17 +102,12 @@
 <tr>
 	<td>select</td>
 	<td>id=sagepaydirectpro_cc_type</td>
-	<td>label=MasterCard</td>
+	<td>label=Visa</td>
 </tr>
 <tr>
 	<td>select</td>
 	<td>id=sagepaydirectpro_cc_type</td>
-	<td>label=Visa</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=remembertoken-sagepaydirectpro</td>
-	<td></td>
+	<td>label=MasterCard</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -211,37 +186,24 @@
 	<td>link=${last_order_id}</td>
 	<td></td>
 </tr>
-<!--********** Verify on order page **********-->
-<tr>
-	<td>assertText</td>
-	<td>css=span.price</td>
-	<td>${last_order_price_subtotal}</td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>css=tr.shipping &gt; td.last.a-right &gt; span.price</td>
-	<td>${last_order_price_shipping}</td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>//table[@id='my-orders-table']/tfoot/tr[3]/td[2]/span</td>
-	<td>${last_order_price_tax}</td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>css=strong &gt; span.price</td>
-	<td>${last_order_price_total}</td>
-</tr>
+<!--********** Verify token added **********-->
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Invoices</td>
+	<td>link=Sage Pay - Saved Credit Cards</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>link=Print Invoice</td>
-	<td>Print Invoice</td>
+	<td>css=img[alt=&quot;MasterCard logo&quot;]</td>
+	<td></td>
 </tr>
+<!--********** Delete token added **********-->
+<tr>
+	<td>click</td>
+	<td>//*[@id=&quot;my-sagepaycards-table&quot;]/tbody/tr/td[6]/a</td>
+	<td></td>
+</tr>
+
 </tbody></table>
 </body>
 </html>

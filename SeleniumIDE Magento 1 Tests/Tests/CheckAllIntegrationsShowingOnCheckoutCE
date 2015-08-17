@@ -34,16 +34,6 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sagepaysuite_sagepaypaypal-head</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=sagepaysuite_sagepaypaypal_active</td>
-	<td>label=Yes</td>
-</tr>
-<tr>
-	<td>click</td>
 	<td>id=sagepaysuite_sagepaydirectpro-head</td>
 	<td></td>
 </tr>
@@ -64,16 +54,6 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=sagepaysuite_sagepayrepeat-head</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=sagepaysuite_sagepayrepeat_active</td>
-	<td>label=Yes</td>
-</tr>
-<tr>
-	<td>click</td>
 	<td>id=sagepaysuite_sagepayserver_moto-head</td>
 	<td></td>
 </tr>
@@ -81,27 +61,6 @@
 	<td>select</td>
 	<td>id=sagepaysuite_sagepayserver_moto_active</td>
 	<td>label=Yes</td>
-</tr>
-<tr>
-	<td>runScriptAndWait</td>
-	<td>configForm.submit()</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>css=li.success-msg &gt; ul &gt; li</td>
-	<td>The configuration has been saved.</td>
-</tr>
-<!--********** Disable OSC **********-->
-<tr>
-	<td>clickAndWait</td>
-	<td>//ul[@id='system_config_tabs']/li[6]/dl/dd[6]/a/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=onestepcheckout_general_rewrite_checkout_links</td>
-	<td>label=No</td>
 </tr>
 <tr>
 	<td>runScriptAndWait</td>
@@ -168,11 +127,6 @@
 <tr>
 	<td>assertText</td>
 	<td>id=p_method_sagepayform</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>id=p_method_sagepaypaypal</td>
 	<td></td>
 </tr>
 <tr>

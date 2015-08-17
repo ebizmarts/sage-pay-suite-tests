@@ -29,6 +29,11 @@
 </tr>
 <tr>
 	<td>select</td>
+	<td>id=sagepaysuite_sagepayserver_payment_action</td>
+	<td>label=Authorise and Capture</td>
+</tr>
+<tr>
+	<td>select</td>
 	<td>id=sagepaysuite_sagepayserver_payment_iframe_position</td>
 	<td>label=Below the &quot;Place Order&quot; button</td>
 </tr>

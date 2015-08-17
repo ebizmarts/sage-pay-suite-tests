@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://suite-test1.ebizmarts.com/" />
+<title>DIRECTMOTO_OrderBasic</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">DIRECTMOTO_OrderBasic</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>${magento_admin_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//*[@id=&quot;page:main-container&quot;]/div[2]/table/tbody/tr/td[2]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//table[@id='sales_order_create_customer_grid_table']/tbody/tr/td[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=store_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//*[@id=&quot;order-items_grid&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.form-buttons &gt; button.scalable.add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//*[@id=&quot;sales_order_create_search_grid_table&quot;]/tbody/tr/td[5]/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//*[@id=&quot;order-search&quot;]/div/div[1]/div/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//*[@id=&quot;s_method_flatrate_flatrate&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//*[@id=&quot;s_method_flatrate_flatrate&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//*[@id=&quot;order-shipping-method-summary&quot;]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//*[@id=&quot;order-shipping-method-summary&quot;]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//*[@id=&quot;order-shipping-method-info&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=p_method_sagepaydirectpro_moto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sagepaydirectpro_moto_cc_type</td>
+	<td>label=Visa</td>
+</tr>
+<!--************ Save order data for later ************-->
+<tr>
+	<td>storeText</td>
+	<td>//*[@id=&quot;order-totals&quot;]/div/table/tbody/tr[2]/td[2]/span</td>
+	<td>last_order_price_subtotal</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//*[@id=&quot;order-totals&quot;]/div/table/tbody/tr[4]/td[2]/span</td>
+	<td>last_order_price_tax</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//*[@id=&quot;order-totals&quot;]/div/table/tbody/tr[3]/td[2]/span</td>
+	<td>last_order_price_shipping</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//*[@id=&quot;order-totals&quot;]/div/table/tbody/tr[5]/td[2]/strong/span</td>
+	<td>last_order_price_total</td>
+</tr>
+<tr>
+	<td>runScript</td>
+	<td>SageSuiteCreateOrder.orderSave();</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//*[@id=&quot;sales_order_view&quot;]</td>
+	<td></td>
+</tr>
+<!--*********** VERIFY DETAILS ***************-->
+<tr>
+	<td>assertText</td>
+	<td>//*[@id=&quot;sales_order_view_tabs_order_info_content&quot;]/div[1]/div[16]/div[2]/table/tbody/tr[1]/td[2]/span</td>
+	<td>${last_order_price_subtotal}</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//*[@id=&quot;sales_order_view_tabs_order_info_content&quot;]/div[1]/div[16]/div[2]/table/tbody/tr[2]/td[2]/span</td>
+	<td>${last_order_price_shipping}</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//*[@id=&quot;sales_order_view_tabs_order_info_content&quot;]/div[1]/div[16]/div[2]/table/tbody/tr[3]/td[2]/span</td>
+	<td>${last_order_price_tax}</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//*[@id=&quot;sales_order_view_tabs_order_info_content&quot;]/div[1]/div[16]/div[2]/table/tfoot/tr[1]/td[2]/strong/span</td>
+	<td>${last_order_price_total}</td>
+</tr>
+</tbody></table>
+</body>
+</html>
