@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://suite-test1.ebizmarts.com/admin" />
-<title>DIRECT_OrderBasic</title>
+<link rel="selenium.base" href="http://suite-test1.ebizmarts.com" />
+<title>DIRECT_OrderBasic_DEFERRED</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">DIRECT_OrderBasic</td></tr>
+<tr><td rowspan="1" colspan="3">DIRECT_OrderBasic_DEFERRED</td></tr>
 </thead><tbody>
 <!--********** Disable OSC **********-->
 <tr>
@@ -25,27 +25,7 @@
 <tr>
 	<td>select</td>
 	<td>id=sagepaysuite_sagepaydirectpro_payment_action</td>
-	<td>label=Authorise and Capture</td>
-</tr>
-<tr>
-	<td>runScriptAndWait</td>
-	<td>configForm.submit()</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>css=li.success-msg &gt; ul &gt; li</td>
-	<td>The configuration has been saved.</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>//ul[@id='system_config_tabs']/li[6]/dl/dd[6]/a/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=onestepcheckout_general_rewrite_checkout_links</td>
-	<td>label=No</td>
+	<td>label=Defer</td>
 </tr>
 <tr>
 	<td>runScriptAndWait</td>
@@ -233,15 +213,62 @@
 	<td>${last_order_price_total}</td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>assertElementNotPresent</td>
 	<td>link=Invoices</td>
+	<td></td>
+</tr>
+<!--********** Verify release **********-->
+<tr>
+	<td>open</td>
+	<td>${magento_admin_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//*[@id=&quot;sales_order_grid_table&quot;]/tbody/tr[1]/td[2]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>link=Print Invoice</td>
-	<td>Print Invoice</td>
+	<td>css=fieldset &gt; p</td>
+	<td>Credit Card (Sage Pay) <br /> DEFERRED Transaction placed in TEST mode.</td>
 </tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//*[@id=&quot;content&quot;]/div/div[2]/p/button[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//*[@id=&quot;invoice_totals&quot;]/div[2]/table/tfoot/tr/td[2]/strong/span</td>
+	<td>${last_order_price_total}</td>
+</tr>
+<tr>
+	<td>runScriptAndWait</td>
+	<td>disableElements('submit-button');$('edit_form').submit()</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='messages']/ul/li/ul/li[2]/span</td>
+	<td>The invoice has been created.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=strong.gr-ntce</td>
+	<td>Transaction has been successfully RELEASED.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//*[@id=&quot;sales_order_view_tabs_order_info_content&quot;]/div[1]/div[16]/div[2]/table/tfoot/tr[1]/td[2]/strong/span</td>
+	<td>${last_order_price_total}</td>
+</tr>
+
 </tbody></table>
 </body>
 </html>

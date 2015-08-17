@@ -4,14 +4,14 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://suite-test1.ebizmarts.com/admin" />
-<title>DIRECT_OrderBasic</title>
+<title>PAYPAL_OrderBasic</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">DIRECT_OrderBasic</td></tr>
+<tr><td rowspan="1" colspan="3">PAYPAL_OrderBasic</td></tr>
 </thead><tbody>
-<!--********** Disable OSC **********-->
+<!--********** Set needed config **********-->
 <tr>
 	<td>open</td>
 	<td>${magento_admin_url}</td>
@@ -24,28 +24,13 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=sagepaysuite_sagepaydirectpro_payment_action</td>
-	<td>label=Authorise and Capture</td>
-</tr>
-<tr>
-	<td>runScriptAndWait</td>
-	<td>configForm.submit()</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>css=li.success-msg &gt; ul &gt; li</td>
-	<td>The configuration has been saved.</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>//ul[@id='system_config_tabs']/li[6]/dl/dd[6]/a/span</td>
-	<td></td>
+	<td>id=sagepaysuite_sagepaypaypal_active</td>
+	<td>label=Yes</td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=onestepcheckout_general_rewrite_checkout_links</td>
-	<td>label=No</td>
+	<td>id=sagepaysuite_sagepaypaypal_force_basketxml_paypal</td>
+	<td>label=Yes</td>
 </tr>
 <tr>
 	<td>runScriptAndWait</td>
@@ -111,27 +96,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=p_method_sagepaydirectpro</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Add new</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=sagepaydirectpro_cc_type</td>
-	<td>label=MasterCard</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=sagepaydirectpro_cc_type</td>
-	<td>label=Visa</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=remembertoken-sagepaydirectpro</td>
+	<td>id=p_method_sagepaypaypal</td>
 	<td></td>
 </tr>
 <tr>
@@ -169,25 +134,30 @@
 	<td>css=button.button.btn-checkout</td>
 	<td></td>
 </tr>
-<!--********** 3D iframe **********-->
+<!--********** PAYPAL site **********-->
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id=&quot;authentication-table&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
-	<td>name=password</td>
+	<td>id=login_email</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>name=password</td>
-	<td>password</td>
+	<td>id=login_email</td>
+	<td>marting@ebizmarts.com</td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=input[type=&quot;submit&quot;]</td>
+	<td>type</td>
+	<td>id=login_password</td>
+	<td>q1w2e3r4</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=privateDeviceCheckbox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=submitLogin</td>
 	<td></td>
 </tr>
 <!--********** Magento SUCCESS **********-->

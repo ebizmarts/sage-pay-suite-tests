@@ -4,14 +4,14 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://suite-test1.ebizmarts.com/admin" />
-<title>DIRECT_OrderBasic</title>
+<title>PI_OSC_OrderBasic</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">DIRECT_OrderBasic</td></tr>
+<tr><td rowspan="1" colspan="3">PI_OSC_OrderBasic</td></tr>
 </thead><tbody>
-<!--********** Disable OSC **********-->
+<!--********** Set needed config **********-->
 <tr>
 	<td>open</td>
 	<td>${magento_admin_url}</td>
@@ -24,8 +24,8 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=sagepaysuite_sagepaydirectpro_payment_action</td>
-	<td>label=Authorise and Capture</td>
+	<td>id=sagepaysuite_sagepaynit_active</td>
+	<td>label=Yes</td>
 </tr>
 <tr>
 	<td>runScriptAndWait</td>
@@ -37,6 +37,7 @@
 	<td>css=li.success-msg &gt; ul &gt; li</td>
 	<td>The configuration has been saved.</td>
 </tr>
+<!--********** Enable OSC **********-->
 <tr>
 	<td>clickAndWait</td>
 	<td>//ul[@id='system_config_tabs']/li[6]/dl/dd[6]/a/span</td>
@@ -45,7 +46,7 @@
 <tr>
 	<td>select</td>
 	<td>id=onestepcheckout_general_rewrite_checkout_links</td>
-	<td>label=No</td>
+	<td>label=Yes</td>
 </tr>
 <tr>
 	<td>runScriptAndWait</td>
@@ -83,100 +84,40 @@
 	<td>css=li.success-msg &gt; ul &gt; li</td>
 	<td>test was added to your shopping cart.</td>
 </tr>
-<!--********** Checkout **********-->
+<!--********** OSC **********-->
 <tr>
 	<td>open</td>
-	<td>${magento_frontend_url}/checkout/onepage</td>
+	<td>${magento_frontend_url}/onestepcheckout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#billing-buttons-container &gt; button.button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#shipping-progress-opcheckout &gt; dd.complete &gt; address</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=#shipping-method-buttons-container &gt; button.button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForElementPresent</td>
-	<td>css=#shipping_method-progress-opcheckout &gt; dd.complete</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=p_method_sagepaydirectpro</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Add new</td>
+	<td>id=p_method_sagepaynit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=sagepaydirectpro_cc_type</td>
-	<td>label=MasterCard</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=sagepaydirectpro_cc_type</td>
+	<td>id=sagepaynit_cc_type</td>
 	<td>label=Visa</td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>id=remembertoken-sagepaydirectpro</td>
+	<td>waitForElementPresent</td>
+	<td>//*[@id=&quot;onestepcheckout-form&quot;]/fieldset/div/div[3]/div[1]/table[1]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=#payment-buttons-container &gt; button.button</td>
+	<td>id=onestepcheckout-place-order</td>
 	<td></td>
+</tr>
+<!--********** SAGEPAY 3D iframe **********-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sagepaysuite-server-incheckout-iframe</td>
+	<td>Purchase Authentication</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>css=dd.complete &gt; p</td>
-	<td></td>
-</tr>
-<tr>
-	<td>storeText</td>
-	<td>//table[@id='checkout-review-table']/tfoot/tr[2]/td[2]/span</td>
-	<td>last_order_price_subtotal</td>
-</tr>
-<tr>
-	<td>storeText</td>
-	<td>//table[@id='checkout-review-table']/tfoot/tr[4]/td[2]/span</td>
-	<td>last_order_price_tax</td>
-</tr>
-<tr>
-	<td>storeText</td>
-	<td>//table[@id='checkout-review-table']/tfoot/tr[3]/td[2]/span</td>
-	<td>last_order_price_shipping</td>
-</tr>
-<tr>
-	<td>storeText</td>
-	<td>css=strong &gt; span.price</td>
-	<td>last_order_price_total</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=button.button.btn-checkout</td>
-	<td></td>
-</tr>
-<!--********** 3D iframe **********-->
-<tr>
-	<td>waitForElementPresent</td>
-	<td>//*[@id=&quot;authentication-table&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForText</td>
 	<td>name=password</td>
 	<td></td>
 </tr>
@@ -212,26 +153,6 @@
 	<td></td>
 </tr>
 <!--********** Verify on order page **********-->
-<tr>
-	<td>assertText</td>
-	<td>css=span.price</td>
-	<td>${last_order_price_subtotal}</td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>css=tr.shipping &gt; td.last.a-right &gt; span.price</td>
-	<td>${last_order_price_shipping}</td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>//table[@id='my-orders-table']/tfoot/tr[3]/td[2]/span</td>
-	<td>${last_order_price_tax}</td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>css=strong &gt; span.price</td>
-	<td>${last_order_price_total}</td>
-</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Invoices</td>

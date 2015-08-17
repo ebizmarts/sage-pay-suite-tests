@@ -13,7 +13,7 @@
 <!--********** Admin **********-->
 <tr>
 	<td>store</td>
-	<td>http://suite-test1.ebizmarts.com/admin</td>
+	<td>http://suite-test4.ebizmarts.com/admin</td>
 	<td>magento_admin_url</td>
 </tr>
 <tr>
@@ -34,7 +34,7 @@
 <!--********** Frontend **********-->
 <tr>
 	<td>store</td>
-	<td>http://suite-test1.ebizmarts.com</td>
+	<td>http://suite-test4.ebizmarts.com</td>
 	<td>magento_frontend_url</td>
 </tr>
 <tr>
@@ -49,7 +49,7 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>http://suite-test1.ebizmarts.com/test.html</td>
+	<td>http://suite-test4.ebizmarts.com/test.html</td>
 	<td>magento_product_url</td>
 </tr>
 <!--********** Guest data **********-->
