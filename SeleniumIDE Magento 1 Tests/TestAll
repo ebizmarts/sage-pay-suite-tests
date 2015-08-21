@@ -16,6 +16,7 @@
 <tr><td><a href="Tests/FormOrderBasic">FORM_OrderBasic</a></td></tr>
 <tr><td><a href="Tests/RefundLatestOrder">RefundLatestOrder</a></td></tr>
 <tr><td><a href="Tests/SERVER_OrderBasic">SERVER_OrderBelowPO</a></td></tr>
+<tr><td><a href="Tests/SERVER_OrderCancel">SERVER_OrderCancel</a></td></tr>
 <tr><td><a href="Tests/SERVER_OrderAndSaveToken">SERVER_OrderAndSaveToken</a></td></tr>
 <tr><td><a href="Tests/SERVER_OSC_OrderBelowPO">SERVER_OSC_OrderBelowPO</a></td></tr>
 <tr><td><a href="Tests/DIRECT_OrderBasic">DIRECT_OrderBasic</a></td></tr>

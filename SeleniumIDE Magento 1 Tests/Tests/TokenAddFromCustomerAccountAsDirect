@@ -19,7 +19,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[8]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[8]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -119,7 +119,6 @@
 	<td>css=img[alt=&quot;MasterCard logo&quot;]</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
