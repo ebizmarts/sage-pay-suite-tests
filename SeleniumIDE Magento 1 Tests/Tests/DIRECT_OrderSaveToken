@@ -19,7 +19,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[8]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[8]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -203,7 +203,6 @@
 	<td>//*[@id=&quot;my-sagepaycards-table&quot;]/tbody/tr/td[6]/a</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

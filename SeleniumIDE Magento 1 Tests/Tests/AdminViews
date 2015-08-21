@@ -17,13 +17,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li/a/span</td>
-	<td>Dashboard</td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -39,12 +34,12 @@
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[2]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[2]/a/span</td>
 	<td>Token Cards</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[2]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[2]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -65,12 +60,12 @@
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[3]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[3]/a/span</td>
 	<td>Deferred Orders</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[3]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[3]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -91,12 +86,12 @@
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[4]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[4]/a/span</td>
 	<td>Orphan Transactions</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[4]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[4]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -117,18 +112,18 @@
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[5]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[5]/a/span</td>
 	<td>Payment Transactions</td>
 </tr>
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[5]/ul/li/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[5]/ul/li/a/span</td>
 	<td>Direct Refunds</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[5]/ul/li/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[5]/ul/li/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -149,12 +144,12 @@
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[5]/ul/li[2]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[5]/ul/li[2]/a/span</td>
 	<td>New Direct Refund</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[5]/ul/li[2]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[5]/ul/li[2]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -170,12 +165,12 @@
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[6]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[6]/a/span</td>
 	<td>Logs</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[6]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[6]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -191,18 +186,18 @@
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[7]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[7]/a/span</td>
 	<td>Admin &amp; Access API</td>
 </tr>
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[7]/ul/li/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[7]/ul/li/a/span</td>
 	<td>Transaction Detail</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[7]/ul/li/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[7]/ul/li/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -218,12 +213,12 @@
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[7]/ul/li[2]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[7]/ul/li[2]/a/span</td>
 	<td>Fraud Information</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[7]/ul/li[2]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[7]/ul/li[2]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -244,12 +239,12 @@
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[7]/ul/li[3]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[7]/ul/li[3]/a/span</td>
 	<td>White list IP address</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[7]/ul/li[3]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[7]/ul/li[3]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -265,12 +260,12 @@
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[7]/ul/li[4]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[7]/ul/li[4]/a/span</td>
 	<td>3D Secure Administration</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[7]/ul/li[4]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[7]/ul/li[4]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -286,12 +281,12 @@
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[7]/ul/li[5]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[7]/ul/li[5]/a/span</td>
 	<td>AVS/CV2 Administration</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[7]/ul/li[5]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[7]/ul/li[5]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -307,12 +302,12 @@
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[7]/ul/li[6]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[7]/ul/li[6]/a/span</td>
 	<td>Perform Show POST</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[7]/ul/li[6]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[7]/ul/li[6]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -333,12 +328,12 @@
 <!---->
 <tr>
 	<td>verifyText</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[8]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[8]/a/span</td>
 	<td>Configuration</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[8]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[8]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -354,7 +349,7 @@
 <!---->
 <tr>
 	<td>clickAndWait</td>
-	<td>//ul[@id='nav']/li[10]/ul/li[16]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[8]/a/span</td>
 	<td></td>
 </tr>
 <tr>

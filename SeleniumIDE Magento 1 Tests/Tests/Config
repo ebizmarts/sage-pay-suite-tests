@@ -13,7 +13,7 @@
 <!--********** Admin **********-->
 <tr>
 	<td>store</td>
-	<td>http://suite-test4.ebizmarts.com/admin</td>
+	<td>http://EXAMPLE.COM/admin</td>
 	<td>magento_admin_url</td>
 </tr>
 <tr>
@@ -23,33 +23,33 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>admin</td>
+	<td>TEST_USER</td>
 	<td>magento_admin_user</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>q1w2e3r4</td>
+	<td>TEST_PASSWORD</td>
 	<td>magento_admin_pw</td>
 </tr>
 <!--********** Frontend **********-->
 <tr>
 	<td>store</td>
-	<td>http://suite-test4.ebizmarts.com</td>
+	<td>http://EXAMPLE.COM</td>
 	<td>magento_frontend_url</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>marting@ebizmarts.com</td>
+	<td>TEST_USER</td>
 	<td>magento_customer_user</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>q1w2e3r4</td>
+	<td>TEST_PASSWORD</td>
 	<td>magento_customer_pw</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>http://suite-test4.ebizmarts.com/test.html</td>
+	<td>http://EXAMPLE.COM/test.html</td>
 	<td>magento_product_url</td>
 </tr>
 <!--********** Guest data **********-->
