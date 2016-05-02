@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://suite-test1.ebizmarts.com" />
-<title>DIRECT_OSC_OrderBasic</title>
+<title>SERVER_OSC_OrderBelowPO</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">DIRECT_OSC_OrderBasic</td></tr>
+<tr><td rowspan="1" colspan="3">SERVER_OSC_OrderBelowPO</td></tr>
 </thead><tbody>
 <!--********** Set needed config **********-->
 <tr>
@@ -19,33 +19,28 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[8]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[8]/a/span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=sagepaysuite_sagepayform_active</td>
-	<td>label=No</td>
+	<td>id=sagepaysuite_sagepayserver_template_profile</td>
+	<td>label=Low (recommended)</td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=sagepaysuite_sagepayserver_active</td>
-	<td>label=No</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=sagepaysuite_sagepaynit_active</td>
-	<td>label=No</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=sagepaysuite_sagepaydirectpro_payment_action</td>
+	<td>id=sagepaysuite_sagepayserver_payment_action</td>
 	<td>label=Authorise and Capture</td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=sagepaysuite_sagepaydirectpro_active</td>
+	<td>id=sagepaysuite_sagepayserver_active</td>
 	<td>label=Yes</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sagepaysuite_sagepayserver_payment_iframe_position</td>
+	<td>label=Below the &quot;Place Order&quot; button</td>
 </tr>
 <tr>
 	<td>runScriptAndWait</td>
@@ -60,7 +55,7 @@
 <!--********** Enable OSC **********-->
 <tr>
 	<td>clickAndWait</td>
-	<td>//ul[@id='system_config_tabs']/li[6]/dl/dd[6]/a/span</td>
+	<td>//ul[@id='system_config_tabs']/li[4]/dl/dd[6]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -112,22 +107,17 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=p_method_sagepaydirectpro</td>
+	<td>id=p_method_sagepayserver</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//*[@id=&quot;payment_form_sagepaydirectpro&quot;]/a</td>
+	<td>//*[@id=&quot;payment_form_sagepayserver&quot;]/a</td>
 	<td></td>
 </tr>
 <tr>
-	<td>select</td>
-	<td>id=sagepaydirectpro_cc_type</td>
-	<td>label=Visa</td>
-</tr>
-<tr>
 	<td>click</td>
-	<td>//*[@id=&quot;remembertoken-sagepaydirectpro&quot;]</td>
+	<td>//*[@id=&quot;remembertoken-sagepayserver&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -140,11 +130,46 @@
 	<td>id=onestepcheckout-place-order</td>
 	<td></td>
 </tr>
-<!--********** SAGEPAY 3D iframe **********-->
+<!--********** SAGEPAY SERVER iframe **********-->
+<tr>
+	<td>waitForText</td>
+	<td>css=h1.page__title</td>
+	<td>Your card details</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form-card_details.field-pan</td>
+	<td>4929000000006</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form-card_details.field-expiry_mm</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form-card_details.field-expiry_yy</td>
+	<td>24</td>
+</tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id=&quot;authentication-table&quot;]</td>
+	<td>id=form-card_details.field-cvc</td>
 	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form-card_details.field-cvc</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=action</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=sagepaysuite-server-incheckout-iframe</td>
+	<td>Purchase Authentication</td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

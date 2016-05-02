@@ -19,7 +19,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[8]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[8]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -126,17 +126,12 @@
 </tr>
 <tr>
 	<td>storeText</td>
-	<td>//table[@id='checkout-review-table']/tfoot/tr[2]/td[2]/span</td>
+	<td>//table[@id='checkout-review-table']/tfoot/tr[1]/td[2]/span</td>
 	<td>last_order_price_subtotal</td>
 </tr>
 <tr>
 	<td>storeText</td>
-	<td>//table[@id='checkout-review-table']/tfoot/tr[4]/td[2]/span</td>
-	<td>last_order_price_tax</td>
-</tr>
-<tr>
-	<td>storeText</td>
-	<td>//table[@id='checkout-review-table']/tfoot/tr[3]/td[2]/span</td>
+	<td>//table[@id='checkout-review-table']/tfoot/tr[2]/td[2]/span</td>
 	<td>last_order_price_shipping</td>
 </tr>
 <tr>
@@ -204,11 +199,6 @@
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>//table[@id='my-orders-table']/tfoot/tr[3]/td[2]/span</td>
-	<td>${last_order_price_tax}</td>
-</tr>
-<tr>
-	<td>assertText</td>
 	<td>css=strong &gt; span.price</td>
 	<td>${last_order_price_total}</td>
 </tr>
@@ -229,13 +219,18 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>//*[@id=&quot;sales_order_grid_table&quot;]/tbody/tr[1]/td[2]</td>
+	<td>runScript</td>
+	<td>sales_order_gridJsObject.resetFilter()</td>
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>null</td>
+	<td>waitForNotVisible</td>
+	<td>//*[@id=&quot;loading-mask&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//*[@id=&quot;sales_order_grid_table&quot;]/tbody/tr[1]/td[2]</td>
 	<td></td>
 </tr>
 <tr>
@@ -260,7 +255,7 @@
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>//div[@id='messages']/ul/li/ul/li[2]/span</td>
+	<td>//div[@id='messages']/ul/li/ul/li/span</td>
 	<td>The invoice has been created.</td>
 </tr>
 <tr>

@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://suite-test1.ebizmarts.com" />
-<title>DIRECT_OSC_OrderBasic</title>
+<link rel="selenium.base" href="http://suite-test1.ebizmarts.com/admin" />
+<title>PI_OSC_OrderBasic</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">DIRECT_OSC_OrderBasic</td></tr>
+<tr><td rowspan="1" colspan="3">PI_OSC_OrderBasic</td></tr>
 </thead><tbody>
 <!--********** Set needed config **********-->
 <tr>
@@ -19,32 +19,12 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[8]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[8]/a/span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=sagepaysuite_sagepayform_active</td>
-	<td>label=No</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=sagepaysuite_sagepayserver_active</td>
-	<td>label=No</td>
-</tr>
-<tr>
-	<td>select</td>
 	<td>id=sagepaysuite_sagepaynit_active</td>
-	<td>label=No</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=sagepaysuite_sagepaydirectpro_payment_action</td>
-	<td>label=Authorise and Capture</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=sagepaysuite_sagepaydirectpro_active</td>
 	<td>label=Yes</td>
 </tr>
 <tr>
@@ -60,7 +40,7 @@
 <!--********** Enable OSC **********-->
 <tr>
 	<td>clickAndWait</td>
-	<td>//ul[@id='system_config_tabs']/li[6]/dl/dd[6]/a/span</td>
+	<td>//ul[@id='system_config_tabs']/li[4]/dl/dd[6]/a/span</td>
 	<td></td>
 </tr>
 <tr>
@@ -112,23 +92,13 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>id=p_method_sagepaydirectpro</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//*[@id=&quot;payment_form_sagepaydirectpro&quot;]/a</td>
+	<td>id=p_method_sagepaynit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=sagepaydirectpro_cc_type</td>
+	<td>id=sagepaynit_cc_type</td>
 	<td>label=Visa</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//*[@id=&quot;remembertoken-sagepaydirectpro&quot;]</td>
-	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>

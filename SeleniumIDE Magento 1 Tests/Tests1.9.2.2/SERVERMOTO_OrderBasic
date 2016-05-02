@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://suite-test1.ebizmarts.com/" />
+<title>SERVERMOTO_OrderBasic</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">SERVERMOTO_OrderBasic</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>${magento_admin_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>runScript</td>
+	<td>sales_order_gridJsObject.resetFilter()</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>//*[@id=&quot;loading-mask&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sales_order_grid_filter_real_order_id</td>
+	<td>${last_order_id}</td>
+</tr>
+<tr>
+	<td>runScript</td>
+	<td>sales_order_gridJsObject.doFilter()</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//html/body/div[1]/div[5]/div/div[3]/div/div[2]/div/table/tbody/tr[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//table[@id='sales_order_grid_table']/tbody/tr/td[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//html/body/div[2]/div[5]/div/div/div[2]/div/div[2]/p/button[7]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=p_method_sagepayserver_moto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>runScript</td>
+	<td>toggleNewCard(2);</td>
+	<td></td>
+</tr>
+<!--************ Save order data for later ************-->
+<tr>
+	<td>storeText</td>
+	<td>//*[@id=&quot;order-totals&quot;]/table/tbody/tr[1]/td[2]/span</td>
+	<td>last_order_price_subtotal</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//*[@id=&quot;order-totals&quot;]/table/tbody/tr[2]/td[2]/span</td>
+	<td>last_order_price_shipping</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//*[@id=&quot;order-totals&quot;]/table/tbody/tr[3]/td[2]/strong/span</td>
+	<td>last_order_price_total</td>
+</tr>
+<tr>
+	<td>runScript</td>
+	<td>SageSuiteCreateOrder.orderSave();</td>
+	<td></td>
+</tr>
+<!--************ Sagepay SERVER ************-->
+<tr>
+	<td>waitForText</td>
+	<td>id=form-card_details.field-pan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form-card_details.field-pan</td>
+	<td>4929000000006</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form-card_details.field-expiry_mm</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form-card_details.field-expiry_yy</td>
+	<td>26</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=form-card_details.field-cvc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form-card_details.field-cvc</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=action</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//*[@id=&quot;sales_order_view&quot;]</td>
+	<td></td>
+</tr>
+<!--*********** VERIFY DETAILS ***************-->
+<tr>
+	<td>assertText</td>
+	<td>//*[@id=&quot;sales_order_view_tabs_order_info_content&quot;]/div[1]/div[16]/div[2]/table/tbody/tr[1]/td[2]/span</td>
+	<td>${last_order_price_subtotal}</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//*[@id=&quot;sales_order_view_tabs_order_info_content&quot;]/div[1]/div[16]/div[2]/table/tbody/tr[2]/td[2]/span</td>
+	<td>${last_order_price_shipping}</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//*[@id=&quot;sales_order_view_tabs_order_info_content&quot;]/div[1]/div[16]/div[2]/table/tfoot/tr[1]/td[2]/strong/span</td>
+	<td>${last_order_price_total}</td>
+</tr>
+</tbody></table>
+</body>
+</html>
