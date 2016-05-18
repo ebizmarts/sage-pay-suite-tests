@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://suite-test1.ebizmarts.com" />
-<title>SERVER_OSC_OrderBelowPO</title>
+<link rel="selenium.base" href="http://suite-test1.ebizmarts.com/admin" />
+<title>SERVER_OrderBelowPO</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">SERVER_OSC_OrderBelowPO</td></tr>
+<tr><td rowspan="1" colspan="3">SERVER_OrderBelowPO</td></tr>
 </thead><tbody>
 <!--********** Set needed config **********-->
 <tr>
@@ -19,8 +19,13 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[8]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[8]/a/span</td>
 	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sagepaysuite_sagepayserver_active</td>
+	<td>label=Yes</td>
 </tr>
 <tr>
 	<td>select</td>
@@ -36,27 +41,6 @@
 	<td>select</td>
 	<td>id=sagepaysuite_sagepayserver_payment_iframe_position</td>
 	<td>label=Below the &quot;Place Order&quot; button</td>
-</tr>
-<tr>
-	<td>runScriptAndWait</td>
-	<td>configForm.submit()</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>css=li.success-msg &gt; ul &gt; li</td>
-	<td>The configuration has been saved.</td>
-</tr>
-<!--********** Enable OSC **********-->
-<tr>
-	<td>clickAndWait</td>
-	<td>//ul[@id='system_config_tabs']/li[6]/dl/dd[6]/a/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=onestepcheckout_general_rewrite_checkout_links</td>
-	<td>label=Yes</td>
 </tr>
 <tr>
 	<td>runScriptAndWait</td>
@@ -94,10 +78,30 @@
 	<td>css=li.success-msg &gt; ul &gt; li</td>
 	<td>test was added to your shopping cart.</td>
 </tr>
-<!--********** OSC **********-->
+<!--********** Checkout **********-->
 <tr>
 	<td>open</td>
-	<td>${magento_frontend_url}/onestepcheckout</td>
+	<td>${magento_frontend_url}/checkout/onepage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#billing-buttons-container &gt; button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#shipping-progress-opcheckout &gt; dd.complete &gt; address</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#shipping-method-buttons-container &gt; button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#shipping_method-progress-opcheckout &gt; dd.complete</td>
 	<td></td>
 </tr>
 <tr>
@@ -107,22 +111,42 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//*[@id=&quot;payment_form_sagepayserver&quot;]/a</td>
+	<td>link=Add new</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//*[@id=&quot;remembertoken-sagepayserver&quot;]</td>
+	<td>id=remembertoken-sagepayserver</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#payment-buttons-container &gt; button.button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//*[@id=&quot;onestepcheckout-form&quot;]/fieldset/div/div[3]/div[1]/table[1]</td>
+	<td>css=dd.complete &gt; p</td>
 	<td></td>
 </tr>
 <tr>
+	<td>storeText</td>
+	<td>//table[@id='checkout-review-table']/tfoot/tr[1]/td[2]/span</td>
+	<td>last_order_price_subtotal</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//table[@id='checkout-review-table']/tfoot/tr[2]/td[2]/span</td>
+	<td>last_order_price_shipping</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=strong &gt; span.price</td>
+	<td>last_order_price_total</td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>id=onestepcheckout-place-order</td>
+	<td>css=button.button.btn-checkout</td>
 	<td></td>
 </tr>
 <!--********** SAGEPAY SERVER iframe **********-->
@@ -198,6 +222,21 @@
 	<td></td>
 </tr>
 <!--********** Verify on order page **********-->
+<tr>
+	<td>assertText</td>
+	<td>css=span.price</td>
+	<td>${last_order_price_subtotal}</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tr.shipping &gt; td.last.a-right &gt; span.price</td>
+	<td>${last_order_price_shipping}</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=strong &gt; span.price</td>
+	<td>${last_order_price_total}</td>
+</tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Invoices</td>

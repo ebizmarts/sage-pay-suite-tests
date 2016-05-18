@@ -4,14 +4,14 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://suite-test1.ebizmarts.com/admin" />
-<title>CheckAllIntegrationsShowingOnCheckout</title>
+<title>SERVER_OrderCancel</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">CheckAllIntegrationsShowingOnCheckout</td></tr>
+<tr><td rowspan="1" colspan="3">SERVER_OrderCancel</td></tr>
 </thead><tbody>
-<!--********** Enable all integrations **********-->
+<!--********** Set needed config **********-->
 <tr>
 	<td>open</td>
 	<td>${magento_admin_url}</td>
@@ -19,59 +19,23 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//ul[@id='nav']/li[2]/ul/li[11]/ul/li[8]/a/span</td>
+	<td>//ul[@id='nav']/li[2]/ul/li[10]/ul/li[8]/a/span</td>
 	<td></td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=sagepaysuite_sagepayform_active</td>
-	<td>label=Yes</td>
+	<td>id=sagepaysuite_sagepaysuitetoken_token_integration</td>
+	<td>label=Server</td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=sagepaysuite_sagepaypaypal_active</td>
-	<td>label=Yes</td>
+	<td>id=sagepaysuite_sagepayserver_template_profile</td>
+	<td>label=Low (recommended)</td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=sagepaysuite_sagepaydirectpro_active</td>
-	<td>label=Yes</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=sagepaysuite_sagepaydirectpro_moto_active</td>
-	<td>label=Yes</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=sagepaysuite_sagepayrepeat_active</td>
-	<td>label=Yes</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=sagepaysuite_sagepayserver_moto_active</td>
-	<td>label=Yes</td>
-</tr>
-<tr>
-	<td>runScriptAndWait</td>
-	<td>configForm.submit()</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>css=li.success-msg &gt; ul &gt; li</td>
-	<td>The configuration has been saved.</td>
-</tr>
-<!--********** Disable OSC **********-->
-<tr>
-	<td>clickAndWait</td>
-	<td>//ul[@id='system_config_tabs']/li[6]/dl/dd[6]/a/span</td>
-	<td></td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=onestepcheckout_general_rewrite_checkout_links</td>
-	<td>label=No</td>
+	<td>id=sagepaysuite_sagepayserver_payment_iframe_position</td>
+	<td>label=Redirect to Sage Pay</td>
 </tr>
 <tr>
 	<td>runScriptAndWait</td>
@@ -136,24 +100,46 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertText</td>
-	<td>id=p_method_sagepayform</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>id=p_method_sagepaypaypal</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertText</td>
+	<td>click</td>
 	<td>id=p_method_sagepayserver</td>
 	<td></td>
 </tr>
 <tr>
-	<td>assertText</td>
-	<td>id=p_method_sagepaydirectpro</td>
+	<td>click</td>
+	<td>//*[@id=&quot;tokencards-payment-sagepayserver&quot;]/ul/li[1]/input</td>
 	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#payment-buttons-container &gt; button.button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=dd.complete &gt; p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.button.btn-checkout</td>
+	<td></td>
+</tr>
+<!--********** SAGEPAY SERVER iframe **********-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//*[@id=&quot;form-card_details.field-cvc&quot;]</td>
+	<td>Your card details</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//*[@id=&quot;main&quot;]/div/form/div/div[3]/div/div[2]/button</td>
+	<td></td>
+</tr>
+<!--********** Magento CART **********-->
+<tr>
+	<td>waitForText</td>
+	<td>css=li &gt; span</td>
+	<td>Transaction canceled by customer.</td>
 </tr>
 </tbody></table>
 </body>

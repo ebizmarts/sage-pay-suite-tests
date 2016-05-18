@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://suite-test1.ebizmarts.com/admin" />
+<title>RefundLatestOrder</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">RefundLatestOrder</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>${magento_admin_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//ul[@id='nav']/li[2]/ul/li/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>runScript</td>
+	<td>sales_order_gridJsObject.resetFilter()</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>//*[@id=&quot;loading-mask&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sales_order_grid_filter_real_order_id</td>
+	<td>${last_order_id}</td>
+</tr>
+<tr>
+	<td>runScript</td>
+	<td>sales_order_gridJsObject.doFilter()</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//html/body/div[1]/div[5]/div/div[3]/div/div[2]/div/table/tbody/tr[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//table[@id='sales_order_grid_table']/tbody/tr/td[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#sales_order_view_tabs_order_invoices &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#sales_order_view_tabs_order_invoices &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//table[@id='order_invoices_table']/tbody/tr/td</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//*[@id=&quot;anchor-content&quot;]/div/div[2]/p/button[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>runScriptAndWait</td>
+	<td>submitCreditMemo();</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=li &gt; span</td>
+	<td>The credit memo has been created.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tr.2 &gt; td.emph &gt; strong &gt; span.price</td>
+	<td>${last_order_price_total}</td>
+</tr>
+</tbody></table>
+</body>
+</html>

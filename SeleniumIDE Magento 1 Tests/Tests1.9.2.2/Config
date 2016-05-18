@@ -13,7 +13,7 @@
 <!--********** Admin **********-->
 <tr>
 	<td>store</td>
-	<td>http://suite-test1.ebizmarts.com/admin</td>
+	<td>http://suite-test-uk.ebizmarts.com/admin</td>
 	<td>magento_admin_url</td>
 </tr>
 <tr>
@@ -34,7 +34,7 @@
 <!--********** Frontend **********-->
 <tr>
 	<td>store</td>
-	<td>http://suite-test1.ebizmarts.com</td>
+	<td>http://suite-test-uk.ebizmarts.com</td>
 	<td>magento_frontend_url</td>
 </tr>
 <tr>
